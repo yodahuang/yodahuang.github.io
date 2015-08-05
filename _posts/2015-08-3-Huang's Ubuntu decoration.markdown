@@ -11,9 +11,11 @@ categories: Fun
 - 主题工具: Unity Tweak Tool `sudo apt-get install unity-tweak-tool`
 
 ## Sublime
+
 - 主题: [Material Theme](https://github.com/equinusocio/material-theme)
 
 #### 插件们
+
 - [`.h`和`.cpp`之间无缝互相提示](https://github.com/alienhard/SublimeAllAutocomplete)
 - [在项目下开terminal](https://github.com/wbond/sublime_terminal)
 - [自动生成注释](https://github.com/spadgos/sublime-jsdocs)
