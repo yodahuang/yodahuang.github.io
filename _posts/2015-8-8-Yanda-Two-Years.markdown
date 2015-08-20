@@ -3,6 +3,7 @@ layout: post
 title:  "自我,以及其他"
 date:   2015-08-08 00:37:02
 categories: Mind
+summary: 漫谈于2015年8月我空空荡荡的脑瓜里都装了些甚么
 author: Yanda Huang
 ---
 

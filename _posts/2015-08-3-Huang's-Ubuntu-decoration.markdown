@@ -2,7 +2,7 @@
 layout: post
 title:  "彦达的Ubuntu主题及略"
 date:   2015-08-03 22:49:57
-categories: Fun
+categories: Tech
 thumbnail: linux
 author: Yanda Huang
 ---
