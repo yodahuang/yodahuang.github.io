@@ -4,6 +4,7 @@ title:  "小白兔和小灰兔的故事"
 date:   2015-08-27 23:55:35
 categories: Love
 thumbnail: heart
+summary: 小白兔和小灰兔的佳话
 author: Xujie Zhang & Yanda Huang
 ---
 
