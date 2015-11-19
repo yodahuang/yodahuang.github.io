@@ -3,7 +3,7 @@ layout: post
 title: 科学上网推荐
 date: 2015-08-20 23:43:01
 summary: 付费及免费科学上网方法们
-categories: tech
+categories: Sharing
 thumbnail: smile-o
 author: Yanda Huang
 tags:
