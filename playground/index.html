@@ -9,7 +9,7 @@
 <p>So far so good..</p>
 <p id="Nothing"></p>
 <!---<form>-->
-	Temperature in F: <br>
+	Translate temperature in F to C: <br>
 	<input type="number" name="tempf" id="ip" onchange="check()">	
 	<input type="submit" name="submit" onclick="submitted()">
 <!--</form>-->
@@ -77,42 +77,43 @@
 				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 					console.log("geo xml good!");
 					var mygeo=JSON.parse(xmlhttp.responseText);
-					var back_url_pre=String(mygeo.requesturl);
+					var back_url_pre=String(mygeo.location.requesturl);
 					var back_url=back_url_pre.replace("html","json");
 					console.log(back_url);
 
 					var xmlhttp_cond = new XMLHttpRequest();
 					var condition_url="http://api.wunderground.com/api/27ec4d1942668fd7/conditions/q/"+back_url;
 					console.log(condition_url);
-					xmlhttp.onreadystatechange=function(){
-						if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+					xmlhttp_cond.onreadystatechange=function(){
+						if (xmlhttp_cond.readyState==4 && xmlhttp_cond.status==200) {
 							console.log("condition xml good!");
-							var myarr=JSON.parse(xmlhttp.responseText);
+							var myarr=JSON.parse(xmlhttp_cond.responseText);
 							weather_display(myarr);
 						}
 					}
 					xmlhttp_cond.open("GET",condition_url,true);
-					xmlhttp.send();
-						}
-					}
-					xmlhttp.open("GET",geo_url,true);
-					xmlhttp.send();
+					xmlhttp_cond.send();
+				}
+			}
+			xmlhttp.open("GET",geo_url,true);
+			xmlhttp.send();
 
 		}
 	}
 
 	function weather_display(myarr){
-		var mytext=("Proudly powered by"+myarr.title);
+		var mytext=("Proudly powered by "+myarr.current_observation.image.title);
 		var credit=document.createElement("p");
 		var credit_text=document.createTextNode(mytext);
 		credit.appendChild(credit_text);
 		document.getElementById("the_body").appendChild(credit);
-		var picture_url=arr.image.url;
+		var picture_url=myarr.current_observation.image.url;
 		var picture=document.createElement("img");
-		picture.setAttribute("src", myarr.url);
+		picture.setAttribute("src", myarr.current_observation.image.url);
 		document.getElementById("the_body").appendChild(picture);
-		var forecast_text=myarr.observation_location.full+" "+myarr.weather+" "+myarr.temp_c;
+		var forecast_text=myarr.current_observation.observation_location.full+" "+myarr.current_observation.weather+" "+myarr.current_observation.temp_c+"Celcius Degrees";
 		var forecast=document.createElement("h4");
 		forecast.appendChild(document.createTextNode(forecast_text));
+		document.getElementById("the_body").appendChild(forecast);
 	}
 </script>
