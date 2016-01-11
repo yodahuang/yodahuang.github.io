@@ -16,7 +16,10 @@
 <p id="answer"></p>
 
 <button onclick="weather_request()">I want weather!</button>
-
+<form>
+<input type="radio" name="unit" id="unit_c" checked> C
+<input type="radio" name="unit" id="unit_f"> F
+</form>
 </body>
 </html>
 
@@ -111,7 +114,14 @@
 		var picture=document.createElement("img");
 		picture.setAttribute("src", myarr.current_observation.image.url);
 		document.getElementById("the_body").appendChild(picture);
-		var forecast_text=myarr.current_observation.observation_location.full+" "+myarr.current_observation.weather+" "+myarr.current_observation.temp_c+"Celcius Degrees";
+		var forecast_text
+		if (document.getElementById("unit_c").checked) {
+				forecast_text=myarr.current_observation.observation_location.full+" "+myarr.current_observation.weather+" "+myarr.current_observation.temp_c+" Celcius Degrees";
+		}
+		else
+		{
+			forecast_text=myarr.current_observation.observation_location.full+" "+myarr.current_observation.weather+" "+myarr.current_observation.temp_f+" Fahrenheit Degrees";
+		}
 		var forecast=document.createElement("h4");
 		forecast.appendChild(document.createTextNode(forecast_text));
 		document.getElementById("the_body").appendChild(forecast);
