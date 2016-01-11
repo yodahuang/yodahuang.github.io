@@ -3,7 +3,116 @@
 <head>
 	<title>New skills playground</title>
 </head>
-<body>
+<body id="the_body">
+
+<button type="button" id="bt">Click me!</button>
 <p>So far so good..</p>
+<p id="Nothing"></p>
+<!---<form>-->
+	Temperature in F: <br>
+	<input type="number" name="tempf" id="ip" onchange="check()">	
+	<input type="submit" name="submit" onclick="submitted()">
+<!--</form>-->
+<p id="answer"></p>
+
+<button onclick="weather_request()">I want weather!</button>
+
 </body>
-</html>>
+</html>
+
+<script>
+	document.getElementById("bt").onclick=change_p;
+	//alert("I'm running the script!");
+	function change_p(){
+		console.log("I'm in the function!");
+		console.log(document.getElementsByTagName("p").innerHTML);
+		document.getElementsByTagName("p").innerHTML="Not so good...";
+		document.getElementById("Nothing").innerHTML="Not so good...";
+	}
+	function check(){
+		console.log("I'm checking!");
+		var num=document.getElementById("ip").value;
+		console.log(this);
+		if (num>100) {
+			alert("The number is larger than 100");
+			return false;
+		};
+		return true;
+	}
+	function submitted(){
+		if (check())
+		{
+			var num=document.getElementById("ip").value;
+			num=(num-32)*5/9;
+			document.getElementById("answer").innerHTML=num;
+			document.getElementById("ip").value="";
+		}
+	}
+
+	function weather_request()
+	{
+		if (navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(setCoord);
+		}
+		else
+		{
+			alert("Give me position!");
+		}
+
+		var la=0,lo=0;
+
+		function setCoord(position){
+			console.log("I'm running!");
+			la=position.coords.latitude;
+			lo=position.coords.longitude;
+			console.log(la);
+			console.log(lo);
+			console.log("I've successed before url");
+
+			var geo_url="http://api.wunderground.com/api/27ec4d1942668fd7/geolookup/q/"+la+","+lo+".json";
+			console.log(geo_url);
+			var xmlhttp = new XMLHttpRequest(); 
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+					console.log("geo xml good!");
+					var mygeo=JSON.parse(xmlhttp.responseText);
+					var back_url_pre=String(mygeo.requesturl);
+					var back_url=back_url_pre.replace("html","json");
+					console.log(back_url);
+
+					var xmlhttp_cond = new XMLHttpRequest();
+					var condition_url="http://api.wunderground.com/api/27ec4d1942668fd7/conditions/q/"+back_url;
+					console.log(condition_url);
+					xmlhttp.onreadystatechange=function(){
+						if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+							console.log("condition xml good!");
+							var myarr=JSON.parse(xmlhttp.responseText);
+							weather_display(myarr);
+						}
+					}
+					xmlhttp_cond.open("GET",condition_url,true);
+					xmlhttp.send();
+						}
+					}
+					xmlhttp.open("GET",geo_url,true);
+					xmlhttp.send();
+
+		}
+	}
+
+	function weather_display(myarr){
+		var mytext=("Proudly powered by"+myarr.title);
+		var credit=document.createElement("p");
+		var credit_text=document.createTextNode(mytext);
+		credit.appendChild(credit_text);
+		document.getElementById("the_body").appendChild(credit);
+		var picture_url=arr.image.url;
+		var picture=document.createElement("img");
+		picture.setAttribute("src", myarr.url);
+		document.getElementById("the_body").appendChild(picture);
+		var forecast_text=myarr.observation_location.full+" "+myarr.weather+" "+myarr.temp_c;
+		var forecast=document.createElement("h4");
+		forecast.appendChild(document.createTextNode(forecast_text));
+	}
+</script>
