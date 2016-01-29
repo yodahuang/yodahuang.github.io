@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--<link rel="stylesheet" href="style.css">-->
 	<title>New skills playground</title>
 </head>
 <body id="the_body">
@@ -20,8 +21,17 @@
 <input type="radio" name="unit" id="unit_c" checked> C
 <input type="radio" name="unit" id="unit_f"> F
 </form>
+
+<div id="flappy-border">
+	<div id="egg"></div>
+</div>
+
+
+
 </body>
 </html>
+
+
 
 <script>
 	document.getElementById("bt").onclick=change_p;
@@ -127,3 +137,7 @@
 		document.getElementById("the_body").appendChild(forecast);
 	}
 </script>
+<!--
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="flappy.js"></script>
+-->
