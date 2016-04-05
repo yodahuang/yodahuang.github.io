@@ -1,9 +1,11 @@
-# 一个 jekyll Blog
+# [A personal jekyll Blog](yodahuang.github.io)
 
-主题源自 [Carte Noire](https://github.com/jacobtomlinson/carte-noire).
+The original theme comes from [Carte Noire](https://github.com/jacobtomlinson/carte-noire).
 
-个人改动: 
-- 新窗口打开链接(jquery遍历Dom Tree实现)
-- 微信分享图标及description (`_include`中修改`footer`及`header`实现)
-
-点击 [这里](http://yodahuang.github.io)访问.
+### Personal modifications: 
+- Open new window when click on the links
+	- Traverse the DOM Tree using jquery
+- Wechat sharing icon and description
+	- change `footer` and `header` in `_include`
+- Chrome color changing in Android
+	- Add a `<meta>` in `header`
