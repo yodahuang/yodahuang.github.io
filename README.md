@@ -1,4 +1,4 @@
-# [A personal jekyll Blog](yodahuang.github.io)
+# [A personal jekyll Blog](http://yodahuang.github.io)
 
 The original theme comes from [Carte Noire](https://github.com/jacobtomlinson/carte-noire).
 
