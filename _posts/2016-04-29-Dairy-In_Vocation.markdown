@@ -53,3 +53,8 @@ Let me record how I have spent my days.
 下午。。办CPT。
 
 晚上干了四个多小时MDP。成果捉急，好歹是假期第一步，详情参考[README](https://github.com/BGMENG/Microstick2_NFC/blob/master/README.md)
+
+### The fifth day
+
+中午开工，三个小时的逆转裁判DLC内容， 一个小时的泰罗奥特曼。。。吃完晚饭休息完一天从八点开始
+成果捉急
