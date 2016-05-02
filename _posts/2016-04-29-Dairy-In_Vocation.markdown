@@ -58,3 +58,7 @@ Let me record how I have spent my days.
 
 中午开工，三个小时的逆转裁判DLC内容， 一个小时的泰罗奥特曼。。。吃完晚饭休息完一天从八点开始
 成果捉急
+
+### The sisth day
+
+三点起床，理发五点，GRE吃饭七点， 九点干活，验证失败，投降。跪在了地上。
