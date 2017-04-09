@@ -17,22 +17,3 @@ html.page-home {
 
   /*background: linear-gradient(to left, #5f2c82, #49a09d);*/
 }
-
-.content-home .avatar img {
-  width: 150px;
-  height: 150px;
-}
-
-.content-home .name {
-  font-size: 35px;
-}
-
-.content-home .slogan {
-  font-size: 20px;
-  margin-bottom: 16px;
-  margin-top: 5px;
-}
-
-.content-home .nav .item a {
-  font-size: 18px;
-}
