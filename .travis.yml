@@ -3,18 +3,27 @@ language: node_js
 node_js:
 - '6'
 
+cache:
+  directories:
+    - node_modules
+
 before_install:
 - npm install -g hexo
 
-env:
-  global:
-    - GIT_NAME: Yanda Bot
-    - GIT_EMAIL: ward11sdo@qq.com
-    - GITHUB_REPO: yodahuang/yodahuang.github.io
-    - GIT_SOURCE: public
+before_script:
+  - git clone --branch master https://github.com/yodahuang/yodahuang.github.io public
 
 script:
-- npm run build
+  - npm run build
 
 after_success:
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi
+  - cd public
+  - git config user.name "Yanda Bot"
+  - git config user.email "ward11sdo@qq.com"
+  - git add --all .
+  - git commit -m "Travis CI Auto Builder"
+  - git push https://$DEPLOY_REPO@github.com/yodahuang/yodahuang.github.io.git master
+
+branches:
+  only:
+    - src
