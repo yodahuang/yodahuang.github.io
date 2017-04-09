@@ -1,0 +1,15 @@
+node_js:
+- '6'
+
+env:
+  global:
+    - GIT_NAME: Yanda Bot
+    - GIT_EMAIL: ward11sdo@qq.com
+    - GITHUB_REPO: yodahuang/yodahuang.github.io
+    - GIT_SOURCE: public
+
+script:
+- npm run build
+
+after_success:
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi

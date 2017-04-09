@@ -70,4 +70,4 @@ theme: fexo
 deploy:
   type: git
   repo: git@github.com:yodahuang/yodahuang.github.io.git
-  branch: gh-pages
+  branch: master
