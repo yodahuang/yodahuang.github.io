@@ -3,8 +3,14 @@ language: node_js
 node_js:
 - '6'
 
+# Handle git submodules myself
+git:
+    submodules: false
+
 before_install:
-- npm install -g hexo
+  - npm install -g hexo
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
 
 before_script:
   - git clone --branch master https://github.com/yodahuang/yodahuang.github.io public
