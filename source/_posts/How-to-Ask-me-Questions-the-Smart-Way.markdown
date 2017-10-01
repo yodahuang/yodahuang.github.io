@@ -15,4 +15,5 @@ Below is my suggestions when you try to seek help from me.
 - RTFP Read The Fucking PDF & RTFW Read The Fucking Web
 - At least show your effort, that you have tried. If you failed to do something, show what you thought, how you try to solve it. No "I can't do this. Help me."
 - Show your respect. No one born to answer your questions. You should be thankful for my answering.
+- Email > IM > Phone Call. Only make a call when it's absolutely necessary)
 - I'll add if I have other thoughts...
