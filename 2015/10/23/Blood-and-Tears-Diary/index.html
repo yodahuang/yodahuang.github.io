@@ -24,7 +24,7 @@
 <meta property="og:description" content="EECS281A course of segment fault and infinite loopProject2 Sorted Qriority Queue (5 hours debugging) Never use (x–) when using cout or other functions, it’s dangerous! If there’s bug, try using simple">
 <meta property="og:image" content="http://i.imgur.com/Jrhj1TQ.png">
 <meta property="og:image" content="http://i.imgur.com/JSlGglz.png">
-<meta property="og:updated_time" content="2017-11-20T07:12:04.947Z">
+<meta property="og:updated_time" content="2017-12-25T07:43:05.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Blood and Tears Diary">
 <meta name="twitter:description" content="EECS281A course of segment fault and infinite loopProject2 Sorted Qriority Queue (5 hours debugging) Never use (x–) when using cout or other functions, it’s dangerous! If there’s bug, try using simple">
@@ -36,7 +36,7 @@
     <link rel="icon" href="/favicon.ico">
   
 
-  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
 
 
   
@@ -60,6 +60,16 @@ ga('send', 'pageview');
 
   
 
+  
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
 </head>
 
 <body>
@@ -83,6 +93,7 @@ ga('send', 'pageview');
           <a
             class="ROUND_RECT"
             href="/archives/"
+            rel="noopener noreferrer"
             target="_self"
             >
             Blog
@@ -93,6 +104,7 @@ ga('send', 'pageview');
           <a
             class="ROUND_RECT"
             href="/project/"
+            rel="noopener noreferrer"
             target="_blank"
             >
             Project
@@ -103,6 +115,7 @@ ga('send', 'pageview');
           <a
             class="ROUND_RECT"
             href="/category/"
+            rel="noopener noreferrer"
             target="_self"
             >
             Category
@@ -113,6 +126,7 @@ ga('send', 'pageview');
           <a
             class="ROUND_RECT"
             href="/tag/"
+            rel="noopener noreferrer"
             target="_self"
             >
             Tag
@@ -123,6 +137,7 @@ ga('send', 'pageview');
           <a
             class="ROUND_RECT"
             href="/about/"
+            rel="noopener noreferrer"
             target="_self"
             >
             About
@@ -133,6 +148,7 @@ ga('send', 'pageview');
           <a
             class="ROUND_RECT"
             href="/atom.xml"
+            rel="noopener noreferrer"
             target="_blank"
             >
             RSS
@@ -147,7 +163,7 @@ ga('send', 'pageview');
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
+    <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EECS281"><span class="toc-text">EECS281</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-course-of-segment-fault-and-infinite-loop"><span class="toc-text">A course of segment fault and infinite loop</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Project2-Sorted-Qriority-Queue-5-hours-debugging"><span class="toc-text">Project2 Sorted Qriority Queue (5 hours debugging)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EECS-370"><span class="toc-text">EECS 370</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Assembly-where-you-go-through-tens-of-thousands-of-output-to-find-the-bug"><span class="toc-text">Assembly where you go through tens of thousands of output to find the bug</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Project2-Combination-Number-6-hours-debugging"><span class="toc-text">Project2 Combination Number (6 hours debugging)</span></a></li></ol></li></ol></li></ol>
   </div>
 
@@ -186,6 +202,16 @@ ga('send', 'pageview');
         </span>
       
 
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
     </div>
   </header>
 
@@ -207,10 +233,23 @@ ga('send', 'pageview');
   </div>
 </article>
 
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2015/11/18/Chrome-On-Caen/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2015/08/27/The-Story-of-a-White-Rabbit-and-a-Grey-Rabbit/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
 </div>
-
-
-
 
 
   <a id="backTop" class="back-top">
@@ -224,7 +263,7 @@ ga('send', 'pageview');
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">Close</span>
+      <span id="close" class="btn-close">关闭</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -234,6 +273,7 @@ ga('send', 'pageview');
             <a
               class="ROUND_RECT"
               href="/archives/"
+              rel="noopener noreferrer"
               target="_self"
               >
               Blog
@@ -244,6 +284,7 @@ ga('send', 'pageview');
             <a
               class="ROUND_RECT"
               href="/project/"
+              rel="noopener noreferrer"
               target="_blank"
               >
               Project
@@ -254,6 +295,7 @@ ga('send', 'pageview');
             <a
               class="ROUND_RECT"
               href="/category/"
+              rel="noopener noreferrer"
               target="_self"
               >
               Category
@@ -264,6 +306,7 @@ ga('send', 'pageview');
             <a
               class="ROUND_RECT"
               href="/tag/"
+              rel="noopener noreferrer"
               target="_self"
               >
               Tag
@@ -274,6 +317,7 @@ ga('send', 'pageview');
             <a
               class="ROUND_RECT"
               href="/about/"
+              rel="noopener noreferrer"
               target="_self"
               >
               About
@@ -284,6 +328,7 @@ ga('send', 'pageview');
             <a
               class="ROUND_RECT"
               href="/atom.xml"
+              rel="noopener noreferrer"
               target="_blank"
               >
               RSS
@@ -330,6 +375,12 @@ ga('send', 'pageview');
 
 
 
+    
+
+    
+	
+    
+	
   </div>
 
   
