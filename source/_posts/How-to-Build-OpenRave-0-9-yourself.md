@@ -14,11 +14,37 @@ Make sure your Python is the one that comes with the syste, which should be the 
 
 ## Get dependencies
 
+0. Add `usr/local/bin` to your `$PATH`
+
+```
+echo "export PATH=$PATH:/usr/local/bin"" >> ~/.bashrc
+```
+
+If you're using `fish`, you can just run `set -U fish_user_paths /usr/local/bin $fish_user_paths` instead.
+
 1. Get [Coin3D](https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz). Unzip it.
-2. Go inside the folder, run `./configure`, then run `make`, then `sudo make install`
-3. Get [SoXt](https://bitbucket.org/Coin3D/coin/downloads/SoXt-1.3.0.tar.gz). Unzip it.
-4. Go inside the folder, run `./configure`, then run `make`, then `sudo make install`
-5. Install ODE:
+2. Go inside the folder, run `./configure`
+3. To solve potential compilation issues, 
+To solve some compilation errors, change the following:
+- File "include/Inventor/SbBasic.h" (line 26):
+```
++#include <Inventor/C/errors/debugerror.h>
+```
+- File "src/fonts/freetype.cpp" (line 50):
+```
+  +#include <cstdlib>
+```
+The code in this lines will be:
+```
+#ifdef __cplusplus
+#include <cstdlib>
+extern "C" {
+#endif /* __cplusplus */>
+```
+4. then run `make`, then `sudo make install`
+5. Get [SoXt](https://bitbucket.org/Coin3D/coin/downloads/SoXt-1.3.0.tar.gz). Unzip it.
+6. Go inside the folder, run `./configure`, then run `make`, then `sudo make install`
+7. Install ODE:
 ```bash
 # ode - Will need to install ODE from sources (do not use the one in the package manager)
 wget https://downloads.sourceforge.net/project/opende/ODE/0.11.1/ode-0.11.1.tar.bz2
@@ -28,7 +54,7 @@ cd ode-0.11.1
 make -j4
 sudo make install
 ```
-6. Install Python dependencies: `sudo apt-get install libboost-python-dev python python-dev python-numpy ipython python-scipy`
+8. Install Python dependencies: `sudo apt-get install libboost-python-dev python python-dev python-numpy ipython python-scipy`
 
 ## Build `openrave`
 
