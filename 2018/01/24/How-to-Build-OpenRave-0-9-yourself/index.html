@@ -7,26 +7,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>科学上网推荐 | Yanda&#39;s Lab</title>
+  <title>How-to-Build-OpenRave-0.9-Yourself | Yanda&#39;s Lab</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Sharing," />
+    <meta name="keywords" content="tech," />
   
 
-  <meta name="description" content="Updated on June 19, 2017: As you can see almost the methods below are not workable now. Available solutions now includes:  Lantern Shadowsocks ShadowsocksR: Shadowsocks with OBFS  Personally I recomme">
-<meta name="keywords" content="Sharing">
+  <meta name="description" content="OverviewThis blog covers instruction of how to build OpenRave 0.9 from Personal Robotics Lab yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by gu">
+<meta name="keywords" content="tech">
 <meta property="og:type" content="article">
-<meta property="og:title" content="科学上网推荐">
-<meta property="og:url" content="http://yodahuang.github.io/2015/08/20/Huang's-Scientific-web-surfing-skills/index.html">
+<meta property="og:title" content="How-to-Build-OpenRave-0.9-Yourself">
+<meta property="og:url" content="http://yodahuang.github.io/2018/01/24/How-to-Build-OpenRave-0-9-yourself/index.html">
 <meta property="og:site_name" content="Yanda&#39;s Lab">
-<meta property="og:description" content="Updated on June 19, 2017: As you can see almost the methods below are not workable now. Available solutions now includes:  Lantern Shadowsocks ShadowsocksR: Shadowsocks with OBFS  Personally I recomme">
+<meta property="og:description" content="OverviewThis blog covers instruction of how to build OpenRave 0.9 from Personal Robotics Lab yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by gu">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-01-25T03:57:55.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="科学上网推荐">
-<meta name="twitter:description" content="Updated on June 19, 2017: As you can see almost the methods below are not workable now. Available solutions now includes:  Lantern Shadowsocks ShadowsocksR: Shadowsocks with OBFS  Personally I recomme">
+<meta name="twitter:title" content="How-to-Build-OpenRave-0.9-Yourself">
+<meta name="twitter:description" content="OverviewThis blog covers instruction of how to build OpenRave 0.9 from Personal Robotics Lab yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by gu">
 
   
 
@@ -160,17 +160,22 @@ ga('send', 'pageview');
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Before-you-start"><span class="toc-text">Before you start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get-dependencies"><span class="toc-text">Get dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-openrave"><span class="toc-text">Build openrave</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
-   <article id="post-Huang&#39;s-Scientific-web-surfing-skills" class="article article-type-post" itemprop="blogPost">
+   <article id="post-How-to-Build-OpenRave-0-9-yourself" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">科学上网推荐</h1>
+    <h1 class="post-title">How-to-Build-OpenRave-0.9-Yourself</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2015.08.20</span>
+        <span>2018.01.24</span>
       </span>
 
       
@@ -181,17 +186,12 @@ ga('send', 'pageview');
       
 
       
-  <span class="article-category">
-    <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/Sharing/">Sharing</a>
-  </span>
-
 
 
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://yodahuang.github.io/2015/08/20/Huang&#39;s-Scientific-web-surfing-skills/#disqus_thread"></a>
+          <a href="http://yodahuang.github.io/2018/01/24/How-to-Build-OpenRave-0-9-yourself/#disqus_thread"></a>
         </span>
       
 
@@ -210,26 +210,25 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <p>Updated on June 19, 2017:</p>
-<p>As you can see almost the methods below are not workable now. Available solutions now includes:</p>
-<ul>
-<li><a href="https://getlantern.org/" target="_blank" rel="noopener">Lantern</a></li>
-<li><a href="https://github.com/shadowsocks/shadowsocks/tree/master" target="_blank" rel="noopener">Shadowsocks</a></li>
-<li><a href="https://github.com/breakwa11/shadowsocks-rss" target="_blank" rel="noopener">ShadowsocksR</a>: Shadowsocks with OBFS</li>
-</ul>
-<p>Personally I recommend getting a VPS from Linode or somewhere else, then deploy the service yourself. It’s fast and fun!</p>
-<hr>
-<ul>
-<li><a href="http://cache.baiducontent.com/c?m=9d78d513d99856ae28afca2d4601d6165809d4252bd7a1020fa0843997732d425015e6ac26520775d8d20d1316de3f4b9efa2235775d2feddd8eca5ddcc88f356acd6223706bdd034c8052ee961263d620e70bb4f004a3f8ac2593d98895800a&amp;p=8e7cc30e86cc41ac52f1dc2d021481&amp;newp=882a9546dc9959b702be9b7c5a5797231610db2151d4da1225cc8b12&amp;user=baidu&amp;fm=sc&amp;query=iplaysoft+%BF%C6%D1%A7%C9%CF%CD%F8&amp;qid=8d181b5d000020de&amp;p1=1" target="_blank" rel="noopener">付费VPN推荐</a></li>
-<li><a href="http://matrix.sspai.com/p/b72ed620" target="_blank" rel="noopener">付费APN服务推荐</a><ul>
-<li><a href="https://www.pandafan.org/" target="_blank" rel="noopener">熊猫翻滚</a> 含国内代理</li>
-<li><a href="https://zqt.pw/" target="_blank" rel="noopener">ZPN</a></li>
-</ul>
+      <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This blog covers instruction of how to build <a href="https://github.com/personalrobotics/openrave" target="_blank" rel="noopener">OpenRave 0.9 from Personal Robotics Lab</a> yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by guessing and trying, so there might be some little bugs. I’m too lazy to write a shell script to do all of the things, so just get your hands dirty and follow it step by step.</p>
+<h2 id="Before-you-start"><a href="#Before-you-start" class="headerlink" title="Before you start"></a>Before you start</h2><p>Make sure your Python is the one that comes with the syste, which should be the case for most of the people. If you are a person like me who uses the fantastic <a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener">pyenv</a>, just run <code>pyenv shell system</code>.</p>
+<h2 id="Get-dependencies"><a href="#Get-dependencies" class="headerlink" title="Get dependencies"></a>Get dependencies</h2><ol>
+<li>Get <a href="https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz" target="_blank" rel="noopener">Coin3D</a>. Unzip it.</li>
+<li>Go inside the folder, run <code>./configure</code>, then run <code>make</code>, then <code>sudo make install</code></li>
+<li>Get <a href="https://bitbucket.org/Coin3D/coin/downloads/SoXt-1.3.0.tar.gz" target="_blank" rel="noopener">SoXt</a>. Unzip it.</li>
+<li>Go inside the folder, run <code>./configure</code>, then run <code>make</code>, then <code>sudo make install</code></li>
+<li><p>Install ODE:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ode - Will need to install ODE from sources (do not use the one in the package manager)</span></div><div class="line">wget https://downloads.sourceforge.net/project/opende/ODE/0.11.1/ode-0.11.1.tar.bz2</div><div class="line">tar xjf ode-0.11.1.tar.bz2</div><div class="line"><span class="built_in">cd</span> ode-0.11.1</div><div class="line">./configure --with-libccd=cyl-cyl --with-trimesh=opcode --enable-new-trimesh --disable-demos --enable-shared --with-arch=nocona --enable-release --enable-malloc --enable-ou --disable-asserts --with-pic --enable-double-precision</div><div class="line">make -j4</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
 </li>
-<li><a href="http://matrix.sspai.com/p/b5374be0" target="_blank" rel="noopener">Android端免费</a></li>
-<li><a href="http://matrix.sspai.com/p/b084e760" target="_blank" rel="noopener">Shadowsocks搭建</a></li>
-<li><a href="https://github.com/goagent/goagent" target="_blank" rel="noopener">电脑端免费：Goagent</a> 安装方法见<code>SimpleGuide</code>，建议配合<a href="https://github.com/azzvx/gogotester" target="_blank" rel="noopener">Gogotester</a>使用</li>
-</ul>
+<li><p>Install Python dependencies: <code>sudo apt-get install libboost-python-dev python python-dev python-numpy ipython python-scipy</code></p>
+</li>
+</ol>
+<h2 id="Build-openrave"><a href="#Build-openrave" class="headerlink" title="Build openrave"></a>Build <code>openrave</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:personalrobotics/openrave.git</div><div class="line"><span class="built_in">cd</span> openrave</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<p>Then add the <code>OPENRAVE_DATA</code> variable to your <code>bashrc</code>, note here the directory includes a <code>/local</code> part.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;export OPENRAVE_DATA=/usr/local/share/openrave-0.9/data/&quot; &gt;&gt; ~/.bashrc</div></pre></td></tr></table></figure>
+<p>If you’re using other shells such as <code>zsh</code> or <code>fish</code>, I think you know what to do.</p>
+<hr>
+<p>Happy OpenRaving!</p>
 
     
   </div>
@@ -240,10 +239,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2015/08/08/Yanda-Two-Years/">
+    <a class="show pull-left" href="/2017/11/20/How-to-let-ROS-play-happily-with-fish/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2015/08/27/The-Story-of-a-White-Rabbit-and-a-Grey-Rabbit/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -357,7 +356,7 @@ ga('send', 'pageview');
   <script>
     var disqus_shortname = 'yodahuang';
     
-    var disqus_url = 'http://yodahuang.github.io/2015/08/20/Huang&#39;s-Scientific-web-surfing-skills/';
+    var disqus_url = 'http://yodahuang.github.io/2018/01/24/How-to-Build-OpenRave-0-9-yourself/';
     
     (function(){
       var dsq = document.createElement('script');

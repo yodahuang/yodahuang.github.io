@@ -20,9 +20,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to let ROS play happily with fish">
 <meta property="og:url" content="http://yodahuang.github.io/2017/11/20/How-to-let-ROS-play-happily-with-fish/index.html">
-<meta property="og:site_name" content="Yanda's Lab">
+<meta property="og:site_name" content="Yanda&#39;s Lab">
 <meta property="og:description" content="ROS is a common platform for robot development. Normally it has some descent document, but not for rosbash. It is stated in the document that  The rosbash package includes limited support for zsh and">
-<meta property="og:updated_time" content="2017-12-25T10:14:45.084Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-25T03:57:55.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to let ROS play happily with fish">
 <meta name="twitter:description" content="ROS is a common platform for robot development. Normally it has some descent document, but not for rosbash. It is stated in the document that  The rosbash package includes limited support for zsh and">
@@ -209,14 +210,14 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <p><code>ROS</code> is a common platform for robot development. Normally it has some descent document, but not for <a href="http://wiki.ros.org/rosbash" target="_blank" rel="external">rosbash</a>. It is stated in the document that</p>
+      <p><code>ROS</code> is a common platform for robot development. Normally it has some descent document, but not for <a href="http://wiki.ros.org/rosbash" target="_blank" rel="noopener">rosbash</a>. It is stated in the document that</p>
 <blockquote>
 <p>The <code>rosbash</code> package includes limited support for <code>zsh</code> and <code>tcsh</code> by way of sourcing the <code>roszsh</code> or <code>rostcsh</code> files respectively. We currently do not provide documentation on these shells, though much of the functionality is similar to the bash shell extensions.</p>
 </blockquote>
-<p>What if I want to use <a href="https://fishshell.com" target="_blank" rel="external">fish shell</a> instead of <code>bash</code>?  There is a file called <code>rosfish</code> <a href="https://github.com/ros/ros/blob/lunar-devel/tools/rosbash/rosfish" target="_blank" rel="external">in Github</a> but how to use that?</p>
+<p>What if I want to use <a href="https://fishshell.com" target="_blank" rel="noopener">fish shell</a> instead of <code>bash</code>?  There is a file called <code>rosfish</code> <a href="https://github.com/ros/ros/blob/lunar-devel/tools/rosbash/rosfish" target="_blank" rel="noopener">in Github</a> but how to use that?</p>
 <h2 id="Getting-functionalities-such-as-roscd-and-rosed"><a href="#Getting-functionalities-such-as-roscd-and-rosed" class="headerlink" title="Getting functionalities such as roscd and rosed"></a>Getting functionalities such as <code>roscd</code> and <code>rosed</code></h2><p>Instead of sourcing <code>source /opt/ros/lunar/setup.bash</code> as is told in the official document, go to your <code>~/.config/fish/config.fish</code> file (which is essentially <code>.bashrc</code> for bash), add the following line:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /opt/ros/kinetic/share/rosbash/rosfish</div></pre></td></tr></table></figure>
-<h2 id="Sourcing-catkin-workspace"><a href="#Sourcing-catkin-workspace" class="headerlink" title="Sourcing catkin workspace"></a>Sourcing catkin workspace</h2><p>To source your workspace, you can’t just source the file in <code>devel/setup.bash</code> since it’s written in shell script that fish do not understand. Instead, install <a href="https://github.com/edc/bass" target="_blank" rel="external">bass</a> as a bridge between fish and shell script. I recommend using <a href="https://github.com/fisherman/fisherman" target="_blank" rel="external">fisherman</a> for installing bass. </p>
+<h2 id="Sourcing-catkin-workspace"><a href="#Sourcing-catkin-workspace" class="headerlink" title="Sourcing catkin workspace"></a>Sourcing catkin workspace</h2><p>To source your workspace, you can’t just source the file in <code>devel/setup.bash</code> since it’s written in shell script that fish do not understand. Instead, install <a href="https://github.com/edc/bass" target="_blank" rel="noopener">bass</a> as a bridge between fish and shell script. I recommend using <a href="https://github.com/fisherman/fisherman" target="_blank" rel="noopener">fisherman</a> for installing bass. </p>
 <p>Now every time you need to source your workspace, run this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bass <span class="built_in">source</span> devel/setup.bash</div></pre></td></tr></table></figure>
 <h3 id="I’m-lazy-Is-there-a-easier-way"><a href="#I’m-lazy-Is-there-a-easier-way" class="headerlink" title="I’m lazy. Is there a easier way?"></a>I’m lazy. Is there a easier way?</h3><p>I got you. Why sourcing scripts manually when everything can be automated? Let’s use fish’s excellent hook functionality to source the files for us.</p>
@@ -234,10 +235,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="hide pull-left" href="/">
+    <a class="show pull-left" href="/2017/07/09/Where-to-go/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/07/09/Where-to-go/">
+    <a class="show pull-right" href="/2018/01/24/How-to-Build-OpenRave-0-9-yourself/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
