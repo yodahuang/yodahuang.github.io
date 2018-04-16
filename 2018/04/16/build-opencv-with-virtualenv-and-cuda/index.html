@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Permanent-Library-Services | Yanda&#39;s Lab</title>
+  <title>Build Opencv with virtualenv and Cuda | Yanda&#39;s Lab</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,17 @@
     <meta name="keywords" content="null" />
   
 
-  <meta name="description" content="IntroductionWhat’s a personal permanent digital library and why do I need it? Namely, I define it as a place that you can capture everything on the Internet and  keep a copy somewhere. Even if the sou">
+  <meta name="description" content="Sometimes you just don’t want to install OpenCV from pip or conda because you want some extra flexibility, i.e. add in GTK support. However, as a typical open source project, you need to dig in a lot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Permanent-Library-Services">
-<meta property="og:url" content="http://yodahuang.github.io/2017/06/19/Permanent-Library-Services/index.html">
+<meta property="og:title" content="Build Opencv with virtualenv and Cuda">
+<meta property="og:url" content="http://yodahuang.github.io/2018/04/16/build-opencv-with-virtualenv-and-cuda/index.html">
 <meta property="og:site_name" content="Yanda&#39;s Lab">
-<meta property="og:description" content="IntroductionWhat’s a personal permanent digital library and why do I need it? Namely, I define it as a place that you can capture everything on the Internet and  keep a copy somewhere. Even if the sou">
+<meta property="og:description" content="Sometimes you just don’t want to install OpenCV from pip or conda because you want some extra flexibility, i.e. add in GTK support. However, as a typical open source project, you need to dig in a lot">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-04-16T18:25:02.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Permanent-Library-Services">
-<meta name="twitter:description" content="IntroductionWhat’s a personal permanent digital library and why do I need it? Namely, I define it as a place that you can capture everything on the Internet and  keep a copy somewhere. Even if the sou">
+<meta name="twitter:title" content="Build Opencv with virtualenv and Cuda">
+<meta name="twitter:description" content="Sometimes you just don’t want to install OpenCV from pip or conda because you want some extra flexibility, i.e. add in GTK support. However, as a typical open source project, you need to dig in a lot">
 
   
 
@@ -159,22 +159,17 @@ ga('send', 'pageview');
 </div>
 
 
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Service-candidates"><span class="toc-text">Service candidates</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Evernote"><span class="toc-text">Evernote</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pocket"><span class="toc-text">Pocket</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pinboard"><span class="toc-text">Pinboard</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Potential-Candidates"><span class="toc-text">Potential Candidates</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Raindrop-io"><span class="toc-text">Raindrop.io</span></a></li></ol></li></ol></li></ol>
-  </div>
-
 
 
 <div class="content content-post CENTER">
-   <article id="post-Permanent-Library-Services" class="article article-type-post" itemprop="blogPost">
+   <article id="post-build-opencv-with-virtualenv-and-cuda" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">Permanent-Library-Services</h1>
+    <h1 class="post-title">Build Opencv with virtualenv and Cuda</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2017.06.19</span>
+        <span>2018.04.16</span>
       </span>
 
       
@@ -190,7 +185,7 @@ ga('send', 'pageview');
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://yodahuang.github.io/2017/06/19/Permanent-Library-Services/#disqus_thread"></a>
+          <a href="http://yodahuang.github.io/2018/04/16/build-opencv-with-virtualenv-and-cuda/#disqus_thread"></a>
         </span>
       
 
@@ -209,67 +204,13 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>What’s a personal permanent digital library and why do I need it? Namely, I define it as a place that you can capture everything on the Internet and  keep a copy somewhere. Even if the source is down or magically disappears for some interesting reason, you  can still read them whenever you want.</p>
-<p>This post is based on my personal more-than-5-hour-so-enjoy-it research.</p>
-<h2 id="Service-candidates"><a href="#Service-candidates" class="headerlink" title="Service candidates"></a>Service candidates</h2><h4 id="Evernote"><a href="#Evernote" class="headerlink" title="Evernote"></a><a href="https://evernote.com" target="_blank" rel="noopener">Evernote</a></h4><p>Evernote is a note. Note I do not recommend 印象笔记 which is its localized version storing all the data in Chinese data centers though it has a descent WeChat integration.</p>
-<ul>
-<li>Pros:<ul>
-<li>It works</li>
-<li>It does not need you to pay</li>
-</ul>
-</li>
-<li>Cons<ul>
-<li>It’s too heavy and bloat for reading.</li>
-<li>Do not have a good looking Windows client</li>
-</ul>
-</li>
-</ul>
-<h4 id="Pocket"><a href="#Pocket" class="headerlink" title="Pocket"></a><a href="http://getpocket.com" target="_blank" rel="noopener">Pocket</a></h4><p>A well-known read-it-later service which is recently acquired by Mozilla. Its 5-dollar-per-month premium service provides the function we want. It’s not that expensive considering Spotify costs $10 and Netflix costs $8 monthly.</p>
-<ul>
-<li><p>Pros</p>
-<ul>
-<li>Looks good</li>
-</ul>
-</li>
-<li><p>Cons</p>
-<ul>
-<li><p>You can’t change the title of the articles saved, at least for now. This is a bad news for saving 微博文章</p>
-<ul>
-<li>It’s not possible to modify the HTML before saving it. According to its public API v3, the only content-related parameter is URL, which means if I develop my own “save button”, I still can’t change the title</li>
-<li>This feature is under consideration of the development team, according to <a href="https://help.getpocket.com/article/1063-pockets-top-feature-requests" target="_blank" rel="noopener">here</a>.</li>
-<li>I have contacted Pocket Support Team to address 微博文章’s wrong heading problem.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="Pinboard"><a href="#Pinboard" class="headerlink" title="Pinboard"></a><a href="https://pinboard.in/" target="_blank" rel="noopener">Pinboard</a></h4><p>The company that aquired the once-famous and maybe the oldest bookmark system, <a href="https://del.icio.us" target="_blank" rel="noopener">Delicious</a>.  Charges about $22 yearly for permanent library.</p>
-<ul>
-<li>Pros<ul>
-<li>It’s cheap</li>
-</ul>
-</li>
-<li>Cons<ul>
-<li>The webpage is so ugly! OMG they claim that it’s minimum design but look what kind of s**t it is. <ul>
-<li>They do have some good-looking third-party client for OSX and iOS. Well, I guess Windows and Android users do not need any client with basic idea of aesthetics?</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Potential-Candidates"><a href="#Potential-Candidates" class="headerlink" title="Potential Candidates"></a>Potential Candidates</h2><h4 id="Raindrop-io"><a href="#Raindrop-io" class="headerlink" title="Raindrop.io"></a><a href="https://raindrop.io" target="_blank" rel="noopener">Raindrop.io</a></h4><p>A young and <strong>good-looking</strong> bookmark service. It does not has the functionality yet. But according to its <a href="https://raindropio.canny.io/feature-requests/p/ability-to-cache-websites" target="_blank" rel="noopener">Feature Request page</a>, this functionality is planned.</p>
-<ul>
-<li>Pros<ul>
-<li>It looks so good</li>
-<li>It’s cheap ($2 per month for premium)</li>
-</ul>
-</li>
-<li>Cons<ul>
-<li>The feature has not been implemented</li>
-</ul>
-</li>
-</ul>
-<p>Have fun!</p>
+      <p>Sometimes you just don’t want to install <code>OpenCV</code> from <code>pip</code> or <code>conda</code> because you want some extra flexibility, i.e. add in GTK support. However, as a typical open source project, you need to dig in a lot of Stack Overflow and Github issue to finally figuring out how to do that.</p>
+<p>(Before you’re frustrated by …)</p>
+<blockquote>
+<p>Duplicated question, closed<br>nvm I solved that</p>
+</blockquote>
+<p>So, here is the complete script for compiling with custom virtualenv and CUDA. You may need to change the Python path prefix, and I believe if you can find this blog  you know what I’m refering to.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># build/myBuild.sh</span></div><div class="line">PREFIX_MAIN=`pyenv virtualenv-prefix`</div><div class="line">PREFIX=`pyenv prefix`</div><div class="line"></div><div class="line">cmake -D CMAKE_BUILD_TYPE=RELEASE \</div><div class="line">  -D CMAKE_INSTALL_PREFIX=<span class="string">"<span class="variable">$PREFIX</span>"</span> \</div><div class="line">  -D PYTHON3_LIBRARY=<span class="string">"<span class="variable">$PREFIX_MAIN</span>"</span>/lib/libpython3.6m.so \</div><div class="line">  -D PYTHON3_INCLUDE_DIRS=<span class="string">"<span class="variable">$PREFIX_MAIN</span>"</span>/include/python3.6m \</div><div class="line">  -D PYTHON3_EXECUTABLE=<span class="string">"<span class="variable">$PREFIX</span>"</span>/bin/python3.6 \</div><div class="line">  -D PYTHON3_PACKAGES_PATH=<span class="string">"<span class="variable">$PREFIX</span>"</span>/lib/python3.6/site-packages/ \</div><div class="line">  -D PYTHON3_NUMPY_INCLUDE_DIRS=<span class="string">"<span class="variable">$PREFIX</span>"</span>/lib/python3.6/site-packages/numpy/core/include \</div><div class="line">  -D INSTALL_C_EXAMPLES=ON \</div><div class="line">  -D INSTALL_PYTHON_EXAMPLES=ON \</div><div class="line">  -D BUILD_DOCS=ON \</div><div class="line">  -D BUILD_EXAMPLES=ON \</div><div class="line">  -D BUILD_opencv_python3=ON \</div><div class="line">  -D WITH_QT=ON -D WITH_GTK=ON -D WITH_OPENGL=ON \</div><div class="line">  -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules \</div><div class="line">  -D PYTHON_DEFAULT_EXECUTABLE=<span class="string">"<span class="variable">$PREFIX</span>"</span>/bin/python3.6 \</div><div class="line">  -D CUDA_NVCC_FLAGS:STRING=<span class="string">"--expt-relaxed-constexpr"</span> \</div><div class="line">  -D CMAKE_CXX_FLAGS:STRING=<span class="string">"-std=c++11 -Wno-deprecated-declarations"</span> \</div><div class="line">  -D CUDA_PROPAGATE_HOST_FLAGS=OFF ..</div></pre></td></tr></table></figure>
 
     
   </div>
@@ -280,10 +221,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/04/19/Enjoy-My-Fantastic-Music/">
+    <a class="show pull-left" href="/2018/01/24/How-to-Build-OpenRave-0-9-yourself/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/07/09/Where-to-go/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -397,7 +338,7 @@ ga('send', 'pageview');
   <script>
     var disqus_shortname = 'yodahuang';
     
-    var disqus_url = 'http://yodahuang.github.io/2017/06/19/Permanent-Library-Services/';
+    var disqus_url = 'http://yodahuang.github.io/2018/04/16/build-opencv-with-virtualenv-and-cuda/';
     
     (function(){
       var dsq = document.createElement('script');
