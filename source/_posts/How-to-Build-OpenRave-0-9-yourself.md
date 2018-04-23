@@ -10,11 +10,11 @@ This blog covers instruction of how to build [OpenRave 0.9 from Personal Robotic
 
 ## Before you start
 
-Make sure your Python is the one that comes with the syste, which should be the case for most of the people. If you are a person like me who uses the fantastic [pyenv](https://github.com/pyenv/pyenv), just run `pyenv shell system`.
+Make sure your Python is the one that comes with the system, which should be the case for most of the people. If you are a person like me who uses the fantastic [pyenv](https://github.com/pyenv/pyenv), just run `pyenv shell system`.
 
 ## Get dependencies
 
-0. Add `usr/local/bin` to your `$PATH`
+- Add `usr/local/bin` to your `$PATH`
 
 ```
 echo "export PATH=$PATH:/usr/local/bin"" >> ~/.bashrc
@@ -22,10 +22,9 @@ echo "export PATH=$PATH:/usr/local/bin"" >> ~/.bashrc
 
 If you're using `fish`, you can just run `set -U fish_user_paths /usr/local/bin $fish_user_paths` instead.
 
-1. Get [Coin3D](https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz). Unzip it.
-2. Go inside the folder, run `./configure`
-3. To solve potential compilation issues, 
-To solve some compilation errors, change the following:
+- Get [Coin3D](https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz). Unzip it.
+- Go inside the folder, run `./configure`
+- To solve potential compilation issues, change the following:
 - File "include/Inventor/SbBasic.h" (line 26):
 ```
 +#include <Inventor/C/errors/debugerror.h>
@@ -41,10 +40,10 @@ The code in this lines will be:
 extern "C" {
 #endif /* __cplusplus */>
 ```
-4. then run `make`, then `sudo make install`
-5. Get [SoXt](https://bitbucket.org/Coin3D/coin/downloads/SoXt-1.3.0.tar.gz). Unzip it.
-6. Go inside the folder, run `./configure`, then run `make`, then `sudo make install`
-7. Install ODE:
+- then run `make`, then `sudo make install`
+- Get [SoXt](https://bitbucket.org/Coin3D/coin/downloads/SoXt-1.3.0.tar.gz). Unzip it.
+- Go inside the folder, run `./configure`, then run `make`, then `sudo make install`
+- Install ODE:
 ```bash
 # ode - Will need to install ODE from sources (do not use the one in the package manager)
 wget https://downloads.sourceforge.net/project/opende/ODE/0.11.1/ode-0.11.1.tar.bz2
@@ -54,7 +53,7 @@ cd ode-0.11.1
 make -j4
 sudo make install
 ```
-8. Install Python dependencies: `sudo apt-get install libboost-python-dev python python-dev python-numpy ipython python-scipy`
+- Install Python dependencies: `sudo apt-get install libboost-python-dev python python-dev python-numpy ipython python-scipy`
 
 ## Build `openrave`
 
