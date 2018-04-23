@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Yanda&#39;s Lab">
 <meta property="og:description" content="OverviewThis blog covers instruction of how to build OpenRave 0.9 from Personal Robotics Lab yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by gu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-16T18:25:02.900Z">
+<meta property="og:updated_time" content="2018-04-23T02:54:06.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How-to-Build-OpenRave-0.9-Yourself">
 <meta name="twitter:description" content="OverviewThis blog covers instruction of how to build OpenRave 0.9 from Personal Robotics Lab yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by gu">
@@ -211,18 +211,16 @@ ga('send', 'pageview');
   <div class="article-content">
     
       <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This blog covers instruction of how to build <a href="https://github.com/personalrobotics/openrave" target="_blank" rel="noopener">OpenRave 0.9 from Personal Robotics Lab</a> yourself on a Ubuntu Xenial (16.04) machine since the binary is not provided. The instruction is made by guessing and trying, so there might be some little bugs. I’m too lazy to write a shell script to do all of the things, so just get your hands dirty and follow it step by step.</p>
-<h2 id="Before-you-start"><a href="#Before-you-start" class="headerlink" title="Before you start"></a>Before you start</h2><p>Make sure your Python is the one that comes with the syste, which should be the case for most of the people. If you are a person like me who uses the fantastic <a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener">pyenv</a>, just run <code>pyenv shell system</code>.</p>
-<h2 id="Get-dependencies"><a href="#Get-dependencies" class="headerlink" title="Get dependencies"></a>Get dependencies</h2><ol>
+<h2 id="Before-you-start"><a href="#Before-you-start" class="headerlink" title="Before you start"></a>Before you start</h2><p>Make sure your Python is the one that comes with the system, which should be the case for most of the people. If you are a person like me who uses the fantastic <a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener">pyenv</a>, just run <code>pyenv shell system</code>.</p>
+<h2 id="Get-dependencies"><a href="#Get-dependencies" class="headerlink" title="Get dependencies"></a>Get dependencies</h2><ul>
 <li>Add <code>usr/local/bin</code> to your <code>$PATH</code></li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;export PATH=$PATH:/usr/local/bin&quot;&quot; &gt;&gt; ~/.bashrc</div></pre></td></tr></table></figure>
 <p>If you’re using <code>fish</code>, you can just run <code>set -U fish_user_paths /usr/local/bin $fish_user_paths</code> instead.</p>
-<ol>
+<ul>
 <li>Get <a href="https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz" target="_blank" rel="noopener">Coin3D</a>. Unzip it.</li>
 <li>Go inside the folder, run <code>./configure</code></li>
-<li>To solve potential compilation issues,<br>To solve some compilation errors, change the following:</li>
-</ol>
-<ul>
+<li>To solve potential compilation issues, change the following:</li>
 <li><p>File “include/Inventor/SbBasic.h” (line 26):</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+#include &lt;Inventor/C/errors/debugerror.h&gt;</div></pre></td></tr></table></figure>
 </li>
@@ -231,7 +229,7 @@ ga('send', 'pageview');
 </li>
 </ul>
 <p>The code in this lines will be:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#ifdef __cplusplus</div><div class="line">#include &lt;cstdlib&gt;</div><div class="line">extern &quot;C&quot; &#123;</div><div class="line">#endif /* __cplusplus */&gt;</div></pre></td></tr></table></figure></p>
-<ol>
+<ul>
 <li>then run <code>make</code>, then <code>sudo make install</code></li>
 <li>Get <a href="https://bitbucket.org/Coin3D/coin/downloads/SoXt-1.3.0.tar.gz" target="_blank" rel="noopener">SoXt</a>. Unzip it.</li>
 <li>Go inside the folder, run <code>./configure</code>, then run <code>make</code>, then <code>sudo make install</code></li>
@@ -240,7 +238,7 @@ ga('send', 'pageview');
 </li>
 <li><p>Install Python dependencies: <code>sudo apt-get install libboost-python-dev python python-dev python-numpy ipython python-scipy</code></p>
 </li>
-</ol>
+</ul>
 <h2 id="Build-openrave"><a href="#Build-openrave" class="headerlink" title="Build openrave"></a>Build <code>openrave</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:personalrobotics/openrave.git</div><div class="line"><span class="built_in">cd</span> openrave</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
 <p>Then add the <code>OPENRAVE_DATA</code> variable to your <code>bashrc</code>, note here the directory includes a <code>/local</code> part.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;export OPENRAVE_DATA=/usr/local/share/openrave-0.9/data/&quot; &gt;&gt; ~/.bashrc</div></pre></td></tr></table></figure>
