@@ -4,6 +4,7 @@ const path = require('path');
 const lost = require('lost');
 const pxtorem = require('postcss-pxtorem');
 const slash = require('slash');
+const slugify = require('slugify');
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -95,8 +96,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === 'File') {
-    const parsedFilePath = path.parse(node.absolutePath);
-    const slug = `/${parsedFilePath.dir.split('---')[1]}/`;
+    const slug = `/${node.relativeDirectory}/`;
     createNodeField({ node, name: 'slug', value: slug });
   } else if (
     node.internal.type === 'MarkdownRemark' &&
@@ -121,6 +121,35 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     if (typeof node.frontmatter.category !== 'undefined') {
       const categorySlug = `/categories/${_.kebabCase(node.frontmatter.category)}/`;
       createNodeField({ node, name: 'categorySlug', value: categorySlug });
+    }
+  }
+
+  if (node.internal.type === 'MarkdownRemark') {
+    /**
+     * Automatically infer date based on modified time
+     */
+    let date;
+    if (typeof node.frontmatter.date !== 'undefined') {
+      date = node.frontmatter.date;
+    } else {
+      date = getNode(node.parent).modifiedTime;
+    }
+    createNodeField({
+      node,
+      name: 'date',
+      value: date
+    });
+    /**
+     * Check whether the slug matches title
+     */
+    if (node.frontmatter.layout === 'post') {
+      const slug = node.fields.slug;
+      const parsedSlug = slug.split('/');
+      const slugTitle = slug[slug.length-1]==='/'? parsedSlug[parsedSlug.length - 2] : parsedSlug[parsedSlug.length - 1];
+      const realTitle = slugify(node.frontmatter.title, { lower: true });
+      if (slugTitle !== realTitle) {
+        console.warn(`The title of post : ${realTitle} does not match with folder name ${slugTitle}`);
+      }
     }
   }
 };
