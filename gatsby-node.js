@@ -48,6 +48,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: slash(pageTemplate),
             context: { slug: edge.node.fields.slug }
           });
+        } else if (_.get(edge, 'node.frontmatter.layout') === 'project') {
+          // Let's just use page template for now and make a special project template later
+          createPage({
+            path: edge.node.fields.slug,
+            component: slash(pageTemplate),
+            context: { slug: edge.node.fields.slug }
+          });
         } else if (_.get(edge, 'node.frontmatter.layout') === 'post') {
           createPage({
             path: edge.node.fields.slug,
@@ -145,7 +152,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     if (node.frontmatter.layout === 'post') {
       const slug = node.fields.slug;
       const parsedSlug = slug.split('/');
-      const slugTitle = slug[slug.length-1]==='/'? parsedSlug[parsedSlug.length - 2] : parsedSlug[parsedSlug.length - 1];
+      const slugTitle = slug[slug.length - 1] === '/' ? parsedSlug[parsedSlug.length - 2] : parsedSlug[parsedSlug.length - 1];
       const realTitle = slugify(node.frontmatter.title, { lower: true });
       if (slugTitle !== realTitle) {
         console.warn(`The title of post : ${realTitle} does not match with folder name ${slugTitle}`);
