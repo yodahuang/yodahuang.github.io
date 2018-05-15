@@ -2,13 +2,30 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import YouTube from 'react-youtube';
 import './style.scss';
 
 class Post extends React.Component {
   render() {
-    const { title, description, preview } = this.props.data.node.frontmatter;
+    const {
+      title, description, previewStatic, previewAnimated, previewYoutube
+    } = this.props.data.node.frontmatter;
     const { slug } = this.props.data.node.fields;
-    const previewSizes = preview.childImageSharp.sizes;
+
+    let Preview;
+    if (previewStatic !== null) {
+      const previewSizes = previewStatic.childImageSharp.sizes;
+      Preview = (<Img sizes={previewSizes} />);
+    } else if (previewAnimated !== null) {
+      Preview = (<img src={previewAnimated.childImageSharp.original.src} alt="" />);
+    } else {
+      console.assert(previewYoutube !== null);
+      Preview = (
+        <div className="project__playerContainer">
+          <YouTube videoId={previewYoutube} className="project__player" />
+        </div>
+      );
+    }
 
     return (
       <div className="project">
@@ -18,7 +35,7 @@ class Post extends React.Component {
         <Grid fluid>
           <Row>
             <Col xs={12} md={6}>
-              <Img sizes={previewSizes} />
+              {Preview}
             </Col>
             <Col xs={12} md={6}>
               <p className="project__description">{description}</p>

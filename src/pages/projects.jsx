@@ -48,13 +48,21 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            preview {
+            previewStatic {
                 childImageSharp {
                     sizes {
                         ...GatsbyImageSharpSizes_withWebp_tracedSVG
                     }
                 }
             }
+            previewAnimated {
+              childImageSharp {
+                original {
+                  src
+                }
+              }
+            }
+            previewYoutube
             description
           }
         }

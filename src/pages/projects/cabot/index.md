@@ -1,7 +1,7 @@
 ---
 title: "Cabot"
 layout: project
-preview: "1.jpg"
+previewStatic: "1.jpg"
 description: "A hello test"
 ---
 
