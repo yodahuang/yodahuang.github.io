@@ -48,6 +48,7 @@ export const pageQuery = graphql`
           fields {
             slug
             categorySlug
+            date
           }
           frontmatter {
             title

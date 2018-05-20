@@ -38,6 +38,9 @@
         & a {
             text-decoration: underline;
         }
+        & iframe {
+            display: block;
+        }
         & .gatsby-highlight {
             max-width: $layout-post-single-width;
             margin-left: 15px;

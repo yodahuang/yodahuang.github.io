@@ -103,7 +103,16 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === 'File') {
-    const slug = `/${node.relativeDirectory}/`;
+    const relativeDir = node.relativeDirectory;
+    // There can also be time info in the path
+    const folders = relativeDir.split(path.sep);
+    const lastFolder = folders[folders.length - 1];
+    const nameElements = lastFolder.split('---');
+    console.assert(nameElements.length <= 2);
+    if (nameElements.length === 2) {
+      folders[folders.length - 1] = nameElements[1];
+    }
+    const slug = `/${folders.join(path.sep)}/`;
     createNodeField({ node, name: 'slug', value: slug });
   } else if (
     node.internal.type === 'MarkdownRemark' &&
@@ -153,7 +162,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       const slug = node.fields.slug;
       const parsedSlug = slug.split('/');
       const slugTitle = slug[slug.length - 1] === '/' ? parsedSlug[parsedSlug.length - 2] : parsedSlug[parsedSlug.length - 1];
-      const realTitle = slugify(node.frontmatter.title, { lower: true });
+      const realTitle = slugify(node.frontmatter.title);
       if (slugTitle !== realTitle) {
         console.warn(`The title of post : ${realTitle} does not match with folder name ${slugTitle}`);
       }
