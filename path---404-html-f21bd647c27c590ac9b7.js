@@ -1,0 +1,2 @@
+webpackJsonp([0xa2868bfb69fc],{423:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Yanda's Lab",subtitle:"The existence of this blog fills you with determination.",copyright:"© All rights reserved.",menu:[{label:"Articles",path:"/"},{label:"Projects",path:"/projects/"},{label:"About me",path:"/about/"}],author:{name:"Yanda Huang",email:"yanda@cmu.edu",github:"yodahuang",rss:"#"}}}},pathContext:{}}}});
+//# sourceMappingURL=path---404-html-f21bd647c27c590ac9b7.js.map
