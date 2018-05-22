@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    url: 'https://lumen.netlify.com',
-    title: 'Blog by John Doe',
-    subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    url: 'https://yanda.rocks',
+    title: 'Yanda\'s Lab',
+    subtitle: 'The existence of this blog fills you with determination.',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -17,20 +17,13 @@ module.exports = {
       {
         label: 'About me',
         path: '/about/'
-      },
-      {
-        label: 'Contact me',
-        path: '/contact/'
       }
     ],
     author: {
-      name: 'John Doe',
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vk: '#'
+      name: 'Yanda Huang',
+      email: 'yanda@cmu.edu',
+      github: 'yodahuang',
+      rss: '#'
     }
   },
   plugins: [
@@ -113,7 +106,8 @@ module.exports = {
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
+          'gatsby-remark-smartypants',
+          'gatsby-remark-katex'
         ]
       }
     },
